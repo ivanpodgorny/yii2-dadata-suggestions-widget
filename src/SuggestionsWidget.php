@@ -251,6 +251,8 @@ class SuggestionsWidget extends InputWidget
      */
     public $width;
 
+    public $callbacks = [];
+
     /**
      * @inheritdoc
      */
@@ -300,6 +302,8 @@ class SuggestionsWidget extends InputWidget
 
             $this->options[$attribute] = $this->$attribute;
         }
+
+        $this->options = array_merge($this->options, $this->callbacks);
 
         // `type` required
         if (!isset($this->options['type'])) {
