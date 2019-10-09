@@ -71,8 +71,9 @@ class SuggestionsWidget extends InputWidget
     const ADDON_CLEAR = 'clear';
     const ADDON_NONE = 'none';
 
-    public const BOUNDS_CITY_SETTLEMENT = 'city-settlement';
     public const BOUNDS_CITY = 'city';
+    public const BOUNDS_CITY_SETTLEMENT = 'city-settlement';
+    public const BOUNDS_COUNTRY = 'country';
 
     /**
      * Тип подсказок:
@@ -258,6 +259,8 @@ class SuggestionsWidget extends InputWidget
 
     public $bounds;
 
+    public $constraints;
+
     /**
      * @inheritdoc
      */
@@ -281,6 +284,7 @@ class SuggestionsWidget extends InputWidget
             'addon',
             'autoSelectFirst',
             'bounds',
+            'constraints',
             'count',
             'deferRequestBy',
             'floating',
